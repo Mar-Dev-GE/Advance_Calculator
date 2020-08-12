@@ -1,0 +1,9 @@
+#premake
+premake5.exe
+
+#VS solutions files
+.vs/
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
