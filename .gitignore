@@ -1,6 +1,10 @@
 #premake
 premake5.exe
 
+#build
+bin/
+bin-obj/
+
 #VS solutions files
 .vs/
 **.sln
