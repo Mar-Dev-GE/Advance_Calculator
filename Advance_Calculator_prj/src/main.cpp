@@ -1,8 +1,5 @@
 #include "functionality/Core.h"
-
-int NumA, NumB;
-char Signe;
-int Result;
+#include "functionality/Calculator_Base.h"
 
 int main()
 {
@@ -13,29 +10,27 @@ int main()
 	std::cout << "===============================================" << std::endl;
 	std::cout << std::endl;
 
-	std::cout << "Please enter statement to calculat [FORM][Num1 Signe Num2] : ";
-	std::cin >> NumA >> Signe >> NumB;
+	int NumA, NumB;
+	char Signe;
+	int Number = 0;
+	int Result;
 
-	if (isdigit(NumA) && isalpha(Signe) && isdigit(NumB))
+	do
 	{
-		std::cerr << "Wrong form statemnt ! Please enter right form statemnt !" << std::endl;
-	}
-
-	while (Signe != 'Q')
-	{
-		std::cout << "Please enter statement to calculat [FORM][Num1 Signe Num2] : ";
+		std::cout << "Please enter statement in FORM[Num1 signe Num2] : ";
 		std::cin >> NumA >> Signe >> NumB;
-	}
-	
 
-	/*
-	std::cout << "===========================================" << std::endl;
-	std::cout << "====Enter '1' to enter other statement=====" << std::endl;
-	std::cout << "====Enter '2' to use the result as Num1====" << std::endl;
-	std::cout << "====Enter '3' to use the result as Num2====" << std::endl;
-	std::cout << "=====Enter '0' to terminat the program=====" << std::endl;
-	std::cout << "===========================================" << std::endl;
-	*/
+		if (isdigit(NumA) && isalpha(Signe) && isdigit(NumB))
+		{
+			std::cout << "Please enter the correct form : " << std::endl;
+		}
+		else
+		{
+			Result = Calculator::Switch_On_Signe(Signe, NumA, NumB);
+			std::cout << Result << std::endl << std::endl << std::endl;
+		}
+
+	} while (true);
 
 	return 0;
 }
