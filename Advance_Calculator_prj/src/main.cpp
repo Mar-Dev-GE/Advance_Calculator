@@ -27,10 +27,23 @@ int main()
 		else
 		{
 			Result = Calculator::Switch_On_Signe(Signe, NumA, NumB);
-			std::cout << Result << std::endl << std::endl << std::endl;
+			std::cout << "Result : " << Result << std::endl << std::endl;
+
+			std::cout << "======================================================" << std::endl;
+			std::cout << "=============Enter Any number to quit=================" << std::endl;
+			std::cout << "=============Enter 1 to recalculate===================" << std::endl;
+			std::cout << "=============Enter 2 to use the result as num1========" << std::endl;
+			std::cout << "=============Enter 3 to use the result as num2========" << std::endl;
+			std::cout << "======================================================" << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "Please enter a number from the list up : "; std::cin >> Number;
+			std::cout << std::endl;
+
+			Calculator::Switch_On_Number(Number, NumA, NumB, Signe, Result);
 		}
 
-	} while (true);
+	} while (!Calculator::toQuit);
 
 	return 0;
 }
