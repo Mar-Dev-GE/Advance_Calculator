@@ -20,7 +20,7 @@ int Switch_On_Signe(char signe, int Num1, int Num2)
 		return Num1 / Num2;
 		break; 			 
 	case '^':  			 
-		return Num1 ^ Num2;
+		return pow(Num1, Num2);
 		break;
 	default:
 		std::cerr << "The signe in not yet supported !" << std::endl;
